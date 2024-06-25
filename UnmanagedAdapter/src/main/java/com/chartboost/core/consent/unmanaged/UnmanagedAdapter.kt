@@ -26,10 +26,13 @@ class UnmanagedAdapter() : ConsentAdapter, Module {
 
     companion object {
         /**
-         * Please use a unique module identifier.
+         * The unmanaged adapter module ID.
          */
         const val moduleId = "unmanaged"
 
+        /**
+         * The unmanaged adapter module version from the gradle file.
+         */
         const val moduleVersion = BuildConfig.CHARTBOOST_CORE_UNMANAGED_CONSENT_ADAPTER_VERSION
     }
 
