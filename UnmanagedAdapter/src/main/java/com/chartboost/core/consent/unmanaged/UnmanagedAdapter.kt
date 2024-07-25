@@ -10,7 +10,12 @@ package com.chartboost.core.consent.unmanaged
 import android.app.Activity
 import android.content.Context
 import com.chartboost.core.ChartboostCoreLogger
-import com.chartboost.core.consent.*
+import com.chartboost.core.consent.ConsentAdapter
+import com.chartboost.core.consent.ConsentAdapterListener
+import com.chartboost.core.consent.ConsentDialogType
+import com.chartboost.core.consent.ConsentKey
+import com.chartboost.core.consent.ConsentSource
+import com.chartboost.core.consent.ConsentValue
 import com.chartboost.core.error.ChartboostCoreError
 import com.chartboost.core.error.ChartboostCoreException
 import com.chartboost.core.initialization.Module
@@ -28,7 +33,7 @@ class UnmanagedAdapter() : ConsentAdapter, Module {
         /**
          * The unmanaged adapter module ID.
          */
-        const val moduleId = "unmanaged"
+        const val moduleId = "unmanaged_consent_adapter"
 
         /**
          * The unmanaged adapter module version from the gradle file.
