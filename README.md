@@ -13,7 +13,7 @@ The Chartboost Core Unmanaged adapter mediates a set of passthrough methods via 
 
 In your `build.gradle`, add the following entry:
 ```
-    implementation "com.chartboost:chartboost-core-adapter-unmanaged:1.1.8.0.0"
+    implementation "com.chartboost:chartboost-core-adapter-unmanaged:1.1.0.0.1"
 ```
 
 ## Contributions

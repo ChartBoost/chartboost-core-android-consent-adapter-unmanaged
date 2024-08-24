@@ -42,8 +42,11 @@ class UnmanagedAdapter() : ConsentAdapter, Module {
     }
 
     override fun updateCredentials(context: Context, credentials: JSONObject) {
-        // This defaults false
-        shouldUseIabStringsFromSharedPreferences = credentials.optBoolean("shouldUseIabStringsFromSharedPreferences")
+        if (credentials.has("shouldUseIabStringsFromSharedPreferences")) {
+            // This defaults false
+            shouldUseIabStringsFromSharedPreferences =
+                credentials.optBoolean("shouldUseIabStringsFromSharedPreferences")
+        }
     }
 
     override val moduleId: String = Companion.moduleId
@@ -136,6 +139,7 @@ class UnmanagedAdapter() : ConsentAdapter, Module {
     override suspend fun initialize(context: Context, moduleConfiguration: ModuleConfiguration): Result<Unit> {
         if (shouldUseIabStringsFromSharedPreferences) {
             startObservingSharedPreferencesIabStrings(context)
+            consents.putAll(sharedPreferencesIabStrings)
         }
         return Result.success(Unit)
     }
